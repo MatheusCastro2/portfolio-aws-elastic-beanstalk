@@ -1,16 +1,36 @@
-# React + Vite
+# Portfolio Deployment: AWS Elastic Beanstalk & Docker 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório contém a infraestrutura e o processo de deploy do meu portfólio profissional, utilizando containers Docker e o serviço de orquestração AWS Elastic Beanstalk. 
 
-Currently, two official plugins are available:
+O objetivo deste projeto foi migrar uma aplicação estática para um ambiente de produção escalável e gerenciado na nuvem.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologias Utilizadas
+* **Provedor Cloud:** AWS (Amazon Web Services)
+* **Serviço de Computação:** Elastic Beanstalk (PaaS)
+* **Containerização:** Docker
+* **Servidor Web:** Nginx (dentro do container)
 
-## React Compiler
+## 🏗️ Arquitetura da Solução
+A aplicação foi empacotada em uma imagem Docker para garantir a paridade entre os ambientes de desenvolvimento e produção. O Elastic Beanstalk gerencia automaticamente o provisionamento de capacidade, balanceamento de carga e monitoramento da saúde da aplicação.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### O Fluxo de Deploy:
+1. Criação do `Dockerfile` baseado em Nginx.
+2. Build da imagem e teste local.
+3. Configuração do ambiente no AWS Elastic Beanstalk.
+4. Upload e Deploy da aplicação via AWS Console/CLI.
 
-## Expanding the ESLint configuration
+## 📸 Demonstração do Ambiente (Evidências)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Dockerfile e Build
+Aqui está a configuração utilizada para criar o container da aplicação:
+![Print do Dockerfile ou Build Local](./caminho-da-sua-imagem/dockerfile.png)
+
+### 2. Ambiente AWS Elastic Beanstalk (Health: OK)
+Status do ambiente rodando com sucesso na nuvem AWS:
+![Print do Painel da AWS com Status OK](./caminho-da-sua-imagem/aws-ok.png)
+
+### 3. Aplicação Online
+A aplicação servida através do endpoint gerado pelo Beanstalk:
+![Print do Site rodando com o link da AWS](./caminho-da-sua-imagem/site-online.png)
+
+---
